@@ -4,10 +4,19 @@ html
     meta(charset='UTF-8')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css')
+    link(rel='stylesheet', href='/semantic-ui/dist/semantic.min.css')
     
-  body
+  body (ng-app = "app")
     block content
       h1= message
       h2= error.status
       pre #{error.stack}
+
+
+
+
+  
+  block javascripts 
+      script(src="/angular/angular.min.js")
+      script(src="/javascript/main.js")
+      script(src="/javascript/indexController.js")

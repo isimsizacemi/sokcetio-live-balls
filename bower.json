@@ -1,0 +1,14 @@
+{
+  "name": "sokcetio-live-balls",
+  "description": "",
+  "main": "",
+  "authors": [
+    "isimsizacemi <abdurrahman19ozkan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/isimsizacemi/sokcetio-live-balls",
+  "dependencies": {
+    "angular": "^1.8.3",
+    "semantic": "^2.5.0"
+  }
+}
