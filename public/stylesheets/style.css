@@ -66,13 +66,13 @@ body{
   display: inline-block;
 }
 
-.chat{
-  margin-right: 10px!important;
-  margin-left: 10px!important;
+.chat {
+  margin-right: 10px !important;
+  margin-left: 10px !important;
   height: 90px;
-  -webkit-mask-image: -webkit-gradient(linear, left 60%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-
+  -webkit-mask-image: -webkit-gradient(linear, left 60%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
+
 .chat .content{
   text-align: left;
 }

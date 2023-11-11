@@ -1,43 +1,28 @@
 extends layout
 
 block content
-  div(ng-controller = "indexController",ng-init="init()")
-     .ui.one.column.stackable.center.aligned.page.grid.margin-30
+  div(ng-controller="indexController", ng-init="init()")
+    .ui.one.column.stackable.center.aligned.page.grid.margin-30
       .column.twelve.wide
-        .ui.stacked.segment.gameArea
-          .circle.blue(style='left:150px; top:100px')
-            .relative
-              span.name Mehmet
-              .message Selam
-          .circle.green(style='left:300px; top:100px')
-            .relative
-              span.name Alp
-              .message selam nasılsın :)
-          .circle.red(style='left:350px; top:300px')
-            .relative
-              span.name Joe
-              .message this is awesome
+        .ui.stacked.segment.gameArea(ng-click = "onClickPlayer($event)")
+          .circle.blue( 
+            ng-repeat = "player in players"
+            ng-style = "{'left' :  player.position.y, 'top' : player.positon.x}"
+            id= "{{ player.id }}" 
+          )
+            .rilative 
+              span.name {{player.username}}
+              .message
+          
         .ui.items.chat
-          .item
+          .item(ng-repeat="message in messages")
             .content
-              a.header.name Mehmet
-              .description.message
-                | Selam
-          .item
-            .content
-              a.header.name Alp
-              .description.message
-                | selam nasılsın :)
-          .item
-            .content
-              a.header.name Joe
-              .description.message
-                | this is awesome
-          .item
-            .content
-              a.header.name Sinang
-              .description.message
-                | hey
+             span [SERVER]
+              a.header.name {{ message.username }} &nbsp;
+              .description.message(ng-if="!message.type.message")
+                | Ayrıldı
+              .description.message(ng-if="message.type.message")
+                | Katıldı
         .ui.action.input.fluid
-          input(type='text' placeholder='Type here...')
-          button.ui.button Send
+          input(type='text' placeholder='Type here...' ng-model='newMessageText')
+          button.ui.button(ng-click='sendMessage()') Send
